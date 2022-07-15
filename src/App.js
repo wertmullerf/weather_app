@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function App() {
 	const [data, setData] = useState({});
 	const [location, setLocation] = useState("");
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=9a0a6601972c163a37ef83bf19b4769a`;
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_ENDPOINT}`;
 	const searchLocation = (e) => {
 		if (e.key === "Enter") {
 			fetch(url)
